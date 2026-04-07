@@ -162,7 +162,22 @@
             display: flex;
             align-items: center;
             overflow: hidden;
+        }
+        
+        .hero-background {
+            position: absolute;
+            inset: 0;
             background: url('./assets/hero.jpg') center center / cover no-repeat;
+            animation: zoomIn 8s ease-out forwards;
+        }
+        
+        @keyframes zoomIn {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
         }
         
         .hero-overlay {
@@ -824,6 +839,7 @@
     <main>
         <!-- Hero Section -->
         <section class="hero">
+            <div class="hero-background"></div>
             <div class="hero-overlay"></div>
             <div class="container">
                 <div class="hero-content">
