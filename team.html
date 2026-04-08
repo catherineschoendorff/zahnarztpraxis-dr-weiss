@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Team & Praxis – Zahnarztpraxis Dr. Judith Weiss, Pettendorf</title>
+    <meta name="description" content="Lernen Sie das Team der Zahnarztpraxis Dr. Judith Weiss in Pettendorf kennen. Fachkompetenz und persönliche Betreuung seit 1997.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./assets/styles.css">
+    
+    <style>
+        :root {
+            --navy: oklch(28% 0.08 255);
+            --navy-light: oklch(92% 0.02 255);
+            --gold: oklch(72% 0.1 75);
+            --gold-light: oklch(95% 0.04 75);
+        }
+        
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--navy);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 0.75rem 0;
+            transition: all 0.3s;
+        }
+        
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        
+        .logo {
+            height: 64px;
+            flex-shrink: 0;
+        }
+        
+        nav {
+            display: none;
+        }
+        
+        @media (min-width: 1024px) {
+            nav {
+                display: flex;
+                align-items: center;
+                gap: 0.25rem;
+            }
+        }
+        
+        nav a {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--navy);
+            text-decoration: none;
+            position: relative;
+            white-space: nowrap;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            color: var(--gold);
+        }
+        
+        .header-contact {
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .header-contact {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+            }
+        }
+        
+        .phone-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .phone-link:hover {
+            color: var(--gold);
+        }
+        
+        .phone-link svg {
+            color: var(--gold);
+        }
+        
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--gold);
+            color: #ffffff !important;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .btn-gold:hover {
+            background-color: var(--gold);
+            filter: brightness(1.1);
+            color: var(--navy) !important;
+        }
+        
+        .btn-gold:hover svg {
+            stroke: var(--navy);
+        }
+        
+        /* Mobile menu */
+                /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 60;
+        }
+        
+        @media (min-width: 1024px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 40;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .mobile-menu.active {
+            display: flex;
+        }
+        
+        .mobile-menu a {
+            padding: 1rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--navy);
+            text-decoration: none;
+            text-align: center;
+            width: 100%;
+            border-bottom: 1px solid var(--navy-light);
+            transition: all 0.2s;
+        }
+        
+        .mobile-menu a:hover {
+            color: var(--navy);
+            background: var(--gold-light);
+        }
+        
+        .mobile-menu .btn-gold {
+            margin-top: 1rem;
+            width: auto;
+            padding: 0.75rem 2rem;
+            justify-content: center;
+            border-bottom: none;
+            border-radius: 0.5rem;
+        }
+        
+        /* Hamburger Icon */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 24px;
+        }
+        
+        .hamburger span {
+            display: block;
+            height: 2px;
+            background: var(--navy);
+            transition: all 0.3s;
+        }
+        
+        .mobile-menu-btn.active .hamburger span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .mobile-menu-btn.active .hamburger span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-btn.active .hamburger span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        
+        /* Page Header */
+        .page-header {
+            position: relative;
+            padding: 10rem 0 5rem;
+            text-align: left;
+            overflow: hidden;
+            min-height: 300px;
+        }
+        
+        .page-header-background {
+            position: absolute;
+            inset: 0;
+            background: url('./assets/team-hero.png') center center / cover no-repeat;
+            animation: zoomIn 8s ease-out forwards;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header {
+                min-height: 250px;
+                padding: 8rem 0 4rem;
+            }
+            
+            .page-header-background {
+                background-size: contain;
+                background-position: center center;
+                background-color: var(--navy);
+            }
+        }
+        
+        @keyframes zoomIn {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+        
+        .page-header-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(3, 59, 123, 0.10);
+        }
+        
+        .page-header-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .page-header-subtitle {
+            color: var(--gold);
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff !important;
+            margin: 0;
+        }
+        
+        /* Team section */
+        .team-intro {
+            text-align: left;
+            padding: 3rem 0;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.125rem;
+            line-height: 1.75;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            padding: 2rem 0 4rem;
+        }
+        
+        @media (min-width: 768px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .team-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: center top;
+        }
+        
+        .team-card-placeholder {
+            width: 100%;
+            height: 300px;
+            background: var(--navy-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .team-card-placeholder svg {
+            width: 80px;
+            height: 80px;
+            color: var(--navy);
+            opacity: 0.3;
+        }
+        
+        .team-card-content {
+            padding: 1.5rem;
+        }
+        
+        .team-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 0 0 0.25rem;
+        }
+        
+        .team-card-role {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        .team-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .team-card li {
+            position: relative;
+            padding-left: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        
+        .team-card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: #ffffff !important;
+        }
+        
+        .footer-divider {
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            padding: 3rem 0;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .footer-logo {
+            height: 64px;
+            margin-bottom: 1rem;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+        
+        .footer-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+            line-height: 1.75;
+        }
+        
+        .footer-heading {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer-contact svg {
+            color: var(--gold);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .footer-contact a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-contact a:hover {
+            color: #ffffff !important;
+        }
+        
+        .footer-hours {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-hours li {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.25rem;
+        }
+        
+        .footer-bottom {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            padding-bottom: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        @media (min-width: 640px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+        
+        .footer-bottom a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-bottom a:hover {
+            color: #ffffff !important;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        
+            color: #ffffff !important;
+        }
+        
+        main {
+            padding-top: 72px;
+        }
+        
+        @media (min-width: 1024px) {
+            main {
+                padding-top: 88px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="./">
+                <img src="./assets/logo.svg" alt="Zahnarztpraxis Dr. Judith Weiss – Pettendorf" class="logo">
+            </a>
+            
+            <nav>
+                <a href="./team.html" class="active">Team</a>
+                <a href="./behandlungen.html">Behandlungen</a>
+                <a href="./komplementaere-methoden.html">Komplementäre Methoden</a>
+                <a href="./service.html">Service</a>
+                <a href="./kontakt.html">Kontakt</a>
+                
+            </nav>
+            
+            <div class="header-contact">
+                <a href="tel:+499409861430" class="phone-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    09409 861430
+                </a>
+                <a href="tel:+499409861430" class="btn-gold">Termin vereinbaren</a>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Menü öffnen" onclick="toggleMobileMenu()">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </header>
+    
+        <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="./" onclick="closeMobileMenu()">Startseite</a>
+        <a href="./team.html" onclick="closeMobileMenu()">Team</a>
+        <a href="./behandlungen.html" onclick="closeMobileMenu()">Behandlungen</a>
+        <a href="./komplementaere-methoden.html" onclick="closeMobileMenu()">Komplementäre Methoden</a>
+        <a href="./service.html" onclick="closeMobileMenu()">Service</a>
+        <a href="./kontakt.html" onclick="closeMobileMenu()">Kontakt</a>
+        <a href="tel:+499409861430" class="btn-gold" onclick="closeMobileMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            09409 861430
+        </a>
+    </div>
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            menu.classList.toggle('active');
+            btn.classList.toggle('active');
+        }
+        
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            menu.classList.remove('active');
+            btn.classList.remove('active');
+        }
+    </script>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="page-header-background"></div>
+            <div class="page-header-overlay"></div>
+            <div class="container page-header-content">
+                <p class="page-header-subtitle">Zahnarztpraxis Dr. Weiss – Pettendorf</p>
+                <h1>Team & Praxis</h1>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section style="background: white;">
+            <div class="container">
+                <p class="team-intro">
+                    Unser eingespieltes Team in Pettendorf steht Ihnen mit Fachkompetenz und persönlicher Betreuung zur Seite. Wir freuen uns darauf, Sie kennenzulernen.
+                </p>
+                
+                <div class="team-grid">
+                    <!-- Dr. Judith Weiss -->
+                    <div class="team-card">
+                        <img src="./assets/team-judith.jpg" alt="Dr. med. dent. Judith Weiss">
+                        <div class="team-card-content">
+                            <h3>Dr. med. dent. Judith Weiss</h3>
+                            <p class="team-card-role">Zahnärztin & Praxisinhaberin</p>
+                            <ul>
+                                <li>1984–1987 Zahntechnikausbildung, Gesellenprüfung</li>
+                                <li>1987–1996 Studium und Promotion der Zahnmedizin, Universität Regensburg</li>
+                                <li>1994–1997 Assistenzzeit in Wenzenbach und Hemau</li>
+                                <li>01.09.1997 Eröffnung der eigenen Praxis in Pettendorf</li>
+                                <li>2004 Lehrgang QM-Management</li>
+                                <li>2007 Ausbildung in klassischer Homöopathie für Zahnärzte</li>
+                                <li>2008 Curriculum Implantologie (mit Zertifizierung)</li>
+                                <li>2008/9 Kursserie Applied Kinesiology (AK)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Gerda Gessendorfer -->
+                    <div class="team-card">
+                        <img src="./assets/team-gerda.JPG" alt="Gerda Gessendorfer">
+                        <div class="team-card-content">
+                            <h3>Gerda Gessendorfer</h3>
+                            <p class="team-card-role">Prophylaxefachkraft & Rezeption</p>
+                            <ul>
+                                <li>Fortgebildet als Prophylaxefachkraft, an der Rezeption anzutreffen – beantwortet kompetent alle Fragen in Verwaltungs- und Abrechnungsangelegenheiten.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Ramona Raimann -->
+                    <div class="team-card">
+                        <img src="./assets/team-ramona.JPG" alt="Ramona Raimann">
+                        <div class="team-card-content">
+                            <h3>Ramona Raimann</h3>
+                            <p class="team-card-role">Prophylaxe & Zahnreinigung</p>
+                            <ul>
+                                <li>Hilft uns immer mit ihrem Lächeln weiter! Trotz ihrer geheimen Liebe zur Chirurgie ist ihr Fachgebiet die professionelle Prophylaxe und Zahnreinigung. Sie umsorgt unsere Patienten mit viel Sensibilität und Kompetenz.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Wenke Lorenz (Platzhalter) -->
+                    <div class="team-card">
+                        <div class="team-card-placeholder">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        </div>
+                        <div class="team-card-content">
+                            <h3>Vorname Nachname</h3>
+                            <p class="team-card-role">Zahnarzthelferin (ZAH)</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Athina Jamil Kret (Platzhalter) -->
+                    <div class="team-card">
+                        <div class="team-card-placeholder">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        </div>
+                        <div class="team-card-content">
+                            <h3>Vorname Nachname</h3>
+                            <p class="team-card-role">Auszubildende*r</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-divider"></div>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="./assets/logo.svg" alt="Zahnarztpraxis Dr. Weiss" class="footer-logo">
+                    <p class="footer-text">
+                        Ihre Zahnarztpraxis in Pettendorf bei Regensburg. Moderne Zahnheilkunde mit ganzheitlichem Ansatz seit 1997.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Kontakt & Anschrift</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span>Hauptstraße 27a<br>93186 Pettendorf</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <a href="tel:+499409861430">09409 861430</a>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                            <a href="mailto:rezeption@zahnarztpraxis-dr-weiss.de">rezeption@zahnarztpraxis-dr-weiss.de</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Öffnungszeiten</h3>
+                    <ul class="footer-hours">
+                        <li><span>Montag</span><span>08:00–12:00 & 14:00–18:30</span></li>
+                        <li><span>Dienstag</span><span>07:00–11:00</span></li>
+                        <li><span>Mittwoch</span><span>08:00–12:00 & 16:00–20:00</span></li>
+                        <li><span>Donnerstag</span><span>08:00–12:00 & 14:00–18:00</span></li>
+                        <li><span>Freitag</span><span>08:00–12:00</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 Zahnarztpraxis Dr. med. dent. Judith Weiss, Pettendorf</p>
+                <div class="footer-links">
+                    <a href="./impressum.html">Impressum</a>
+                    <a href="./datenschutz.html">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
