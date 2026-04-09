@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Zahnarztpraxis Dr. Judith Weiss – Pettendorf</title>
+    <meta name="description" content="Zahnarztpraxis Dr. Judith Weiss in Pettendorf bei Regensburg. Moderne Zahnheilkunde, Implantologie, Prophylaxe, Homöopathie & komplementäre Methoden. Jetzt Termin vereinbaren: 09409 861430.">
+    
+    <!-- Lokale Fonts - DSGVO-konform -->
+    <link rel="stylesheet" href="./assets/fonts.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./assets/styles.css">
+    
+    <style>
+        /* Custom styles for this page */
+        :root {
+            --navy: oklch(28% 0.08 255);
+            --navy-light: oklch(92% 0.02 255);
+            --gold: oklch(72% 0.1 75);
+            --gold-light: oklch(95% 0.04 75);
+        }
+        
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--navy);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 0.75rem 0;
+            transition: all 0.3s;
+        }
+        
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        
+        .logo {
+            height: 64px;
+            flex-shrink: 0;
+        }
+        
+        nav {
+            display: none;
+        }
+        
+        @media (min-width: 1024px) {
+            nav {
+                display: flex;
+                align-items: center;
+                gap: 0.25rem;
+            }
+        }
+        
+        nav a {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--navy);
+            text-decoration: none;
+            position: relative;
+            white-space: nowrap;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--gold);
+        }
+        
+        .header-contact {
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .header-contact {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+            }
+        }
+        
+        .phone-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .phone-link:hover {
+            color: var(--gold);
+        }
+        
+        .phone-link svg {
+            color: var(--gold);
+        }
+        
+        /* Button styles */
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--gold);
+            color: #ffffff !important;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .btn-gold:hover {
+            background-color: var(--gold);
+            filter: brightness(1.1);
+            color: var(--navy) !important;
+        }
+        
+        .btn-gold:hover svg {
+            stroke: var(--navy);
+        }
+        
+        .btn-gold svg {
+            stroke: #ffffff;
+        }
+        
+        .btn-navy {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--navy);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .btn-navy:hover {
+            filter: brightness(1.2);
+        }
+        
+        /* Hero section */
+        .hero {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .hero-background {
+            position: absolute;
+            inset: 0;
+            background: url('./assets/hero.jpg') center center / cover no-repeat;
+            animation: zoomIn 8s ease-out forwards;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 100vh;
+            }
+            
+            .hero-background {
+                background-size: contain;
+                background-position: center bottom;
+                background-color: var(--navy);
+            }
+        }
+        
+        @keyframes zoomIn {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, 
+                oklch(0.28 0.08 255 / 0.88) 0%, 
+                oklch(0.28 0.08 255 / 0.65) 45%, 
+                oklch(0.28 0.08 255 / 0.15) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 600px;
+        }
+        
+        .hero-subtitle {
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+        
+        .hero-title span {
+            color: var(--gold);
+        }
+        
+        .hero-text {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.125rem;
+            line-height: 1.75;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .hero-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.875rem;
+        }
+        
+        .hero-info span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .hero-info svg {
+            color: var(--gold);
+        }
+        
+        /* Info Bar unter Hero */
+        .info-bar {
+            background: var(--navy);
+            padding: 1rem 0;
+        }
+        
+        .info-bar-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+        }
+        
+        .info-bar-content span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .info-bar-content svg {
+            color: var(--gold);
+        }
+        
+        /* Section styles */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .section-heading.centered {
+            text-align: center;
+        }
+        
+        .section-heading::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin-top: 0.75rem;
+        }
+        
+        .section-heading.centered::after {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Services grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        @media (min-width: 640px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .service-card {
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-left: 4px solid var(--gold);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .service-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--navy-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.75rem;
+        }
+        
+        .service-icon svg {
+            color: var(--navy);
+        }
+        
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-card p {
+            font-size: 0.875rem;
+            color: var(--navy);
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+        
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gold);
+            text-decoration: none;
+            transition: gap 0.2s;
+        }
+        
+        .service-link:hover {
+            gap: 0.5rem;
+        }
+        
+        /* Reviews section */
+        .reviews-section {
+            background: var(--navy);
+            color: white;
+        }
+        
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .reviews-stars {
+            display: flex;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .reviews-stars svg {
+            fill: var(--gold);
+            stroke: var(--gold);
+        }
+        
+        .reviews-rating {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-left: 0.75rem;
+        }
+        
+        .reviews-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .reviews-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.875rem;
+            font-weight: 700;
+        }
+        
+        .gold-divider {
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            margin: 1rem auto 0;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .reviews-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .review-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            color: #333;
+        }
+        
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+        
+        .review-name {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 0.875rem;
+        }
+        
+        .review-date {
+            font-size: 0.75rem;
+            color: #888;
+        }
+        
+        .review-source {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.125rem 0.5rem;
+            border-radius: 9999px;
+            background: rgb(232, 240, 254);
+            color: rgb(26, 115, 232);
+        }
+        
+        .review-stars {
+            display: flex;
+            gap: 0.125rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .review-stars svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--gold);
+            stroke: var(--gold);
+        }
+        
+        .review-text {
+            font-size: 0.875rem;
+            color: var(--navy);
+            line-height: 1.6;
+        }
+        
+        /* About section */
+        .about-section {
+            background: var(--navy-light);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        @media (min-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .about-text p {
+            color: rgba(0, 0, 0, 0.8);
+            margin-bottom: 1.25rem;
+            line-height: 1.75;
+        }
+        
+        .about-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        /* Opening hours card */
+        .hours-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hours-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hours-header svg {
+            color: var(--gold);
+        }
+        
+        .hours-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        
+        .hours-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.875rem;
+        }
+        
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .hours-list .day {
+            font-weight: 600;
+            color: var(--navy);
+        }
+        
+        .hours-list .time {
+            color: var(--navy);
+        }
+        
+        .hours-cta {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .hours-cta .btn-gold {
+            width: 100%;
+            justify-content: center;
+        }
+        
+        /* Map section */
+        .map-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .map-grid {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+        
+        .map-container {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            height: 320px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .contact-card {
+            background: var(--navy-light);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
+        
+        .contact-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .contact-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+        }
+        
+        .contact-list svg {
+            color: var(--gold);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .contact-list a {
+            color: inherit;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-list a:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-buttons {
+            margin-top: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .contact-buttons .btn-gold,
+        .contact-buttons .btn-navy {
+            width: 100%;
+            justify-content: center;
+            font-size: 0.875rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: white;
+        }
+        
+        .footer-divider {
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            padding: 3rem 0;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .footer-logo {
+            height: 64px;
+            margin-bottom: 1rem;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+        
+        .footer-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+            line-height: 1.75;
+        }
+        
+        .footer-heading {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer-contact svg {
+            color: var(--gold);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .footer-contact a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-contact a:hover {
+            color: white;
+        }
+        
+        .footer-hours {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-hours li {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.25rem;
+        }
+        
+        .footer-bottom {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            padding-bottom: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        @media (min-width: 640px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+        
+        .footer-bottom a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-bottom a:hover {
+            color: white;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        
+            color: white;
+        }
+        
+        /* Mobile menu button */
+                /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 60;
+        }
+        
+        @media (min-width: 1024px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 40;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .mobile-menu.active {
+            display: flex;
+        }
+        
+        .mobile-menu a {
+            padding: 1rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--navy);
+            text-decoration: none;
+            text-align: center;
+            width: 100%;
+            border-bottom: 1px solid var(--navy-light);
+            transition: all 0.2s;
+        }
+        
+        .mobile-menu a:hover {
+            color: var(--navy);
+            background: var(--gold-light);
+        }
+        
+        .mobile-menu .btn-gold {
+            margin-top: 1rem;
+            width: auto;
+            padding: 0.75rem 2rem;
+            justify-content: center;
+            border-bottom: none;
+            border-radius: 0.5rem;
+        }
+        
+        /* Hamburger Icon */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 24px;
+        }
+        
+        .hamburger span {
+            display: block;
+            height: 2px;
+            background: var(--navy);
+            transition: all 0.3s;
+        }
+        
+        .mobile-menu-btn.active .hamburger span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .mobile-menu-btn.active .hamburger span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-btn.active .hamburger span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        
+        /* Main content offset for fixed header */
+        main {
+            padding-top: 72px;
+        }
+        
+        @media (min-width: 1024px) {
+            main {
+                padding-top: 88px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="./">
+                <img src="./assets/logo.svg" alt="Zahnarztpraxis Dr. Judith Weiss – Pettendorf" class="logo">
+            </a>
+            
+            <nav>
+                <a href="./team.html">Team</a>
+                <a href="./behandlungen.html">Behandlungen</a>
+                <a href="./komplementaere-methoden.html">Komplementäre Methoden</a>
+                <a href="./service.html">Service</a>
+                <a href="./kontakt.html">Kontakt</a>
+                
+            </nav>
+            
+            <div class="header-contact">
+                <a href="tel:+499409861430" class="phone-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    09409 861430
+                </a>
+                <a href="tel:+499409861430" class="btn-gold">Termin vereinbaren</a>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Menü öffnen" onclick="toggleMobileMenu()">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </header>
+    
+        <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="./" onclick="closeMobileMenu()">Startseite</a>
+        <a href="./team.html" onclick="closeMobileMenu()">Team</a>
+        <a href="./behandlungen.html" onclick="closeMobileMenu()">Behandlungen</a>
+        <a href="./komplementaere-methoden.html" onclick="closeMobileMenu()">Komplementäre Methoden</a>
+        <a href="./service.html" onclick="closeMobileMenu()">Service</a>
+        <a href="./kontakt.html" onclick="closeMobileMenu()">Kontakt</a>
+        <a href="tel:+499409861430" class="btn-gold" onclick="closeMobileMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            09409 861430
+        </a>
+    </div>
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            menu.classList.toggle('active');
+            btn.classList.toggle('active');
+        }
+        
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            menu.classList.remove('active');
+            btn.classList.remove('active');
+        }
+    </script>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-background"></div>
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <p class="hero-subtitle">Zahnarztpraxis in Pettendorf bei Regensburg</p>
+                    <h1 class="hero-title">
+                        Ihr Zahnarzt in Pettendorf<br>
+                        <span>modern, ganzheitlich, persönlich</span>
+                    </h1>
+                    <p class="hero-text">
+                        Unser Beruf ist einer der schönsten, die es gibt: Wir sorgen dafür, dass Sie uns lächelnd wieder verlassen. Ästhetische und moderne Zahnheilkunde, mit dem Patienten im Mittelpunkt.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="tel:+499409861430" class="btn-gold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            Termin vereinbaren
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Bar unter Hero -->
+        <section class="info-bar">
+            <div class="container">
+                <div class="info-bar-content">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        Mo–Fr geöffnet
+                    </span>
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Hauptstraße 27a, 93186 Pettendorf
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section style="background: white;">
+            <div class="container">
+                <div style="text-align: left; margin-bottom: 3rem; max-width: 700px;">
+                    <h2 class="section-heading">Was wir bieten</h2>
+                    <p style="color: var(--navy); margin: 1rem 0 0; line-height: 1.75;">
+                        Als <strong>Zahnarztpraxis in Pettendorf</strong> bieten wir das gesamte Spektrum moderner Zahnheilkunde, ergänzt durch einzigartige komplementäre Methoden, die Sie in dieser Form kaum bei einem anderen Zahnarzt in der Region Regensburg finden.
+                    </p>
+                </div>
+                
+                <div class="services-grid">
+                    <a href="./behandlungen.html" style="text-decoration: none;">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
+                            </div>
+                            <h3>Prophylaxe</h3>
+                            <p>Professionelle Zahnreinigung und Vorsorge für gesunde Zähne.</p>
+                            <span class="service-link">
+                                Mehr erfahren
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                            </span>
+                        </div>
+                    </a>
+                    
+                    <a href="./behandlungen.html" style="text-decoration: none;">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2v2"></path><path d="M5 2v2"></path><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"></path><path d="M8 15a6 6 0 0 0 12 0v-3"></path><circle cx="20" cy="10" r="2"></circle></svg>
+                            </div>
+                            <h3>Implantologie</h3>
+                            <p>Festsitzender Zahnersatz auf Implantaten, modern und dauerhaft.</p>
+                            <span class="service-link">
+                                Mehr erfahren
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                            </span>
+                        </div>
+                    </a>
+                    
+                    <a href="./behandlungen.html" style="text-decoration: none;">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" x2="9.01" y1="9" y2="9"></line><line x1="15" x2="15.01" y1="9" y2="9"></line></svg>
+                            </div>
+                            <h3>Ästhetik & Funktion</h3>
+                            <p>Schöne Zähne und optimale Kaufunktion in Einklang.</p>
+                            <span class="service-link">
+                                Mehr erfahren
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                            </span>
+                        </div>
+                    </a>
+                    
+                    <a href="./behandlungen.html" style="text-decoration: none;">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                            </div>
+                            <h3>Zahnersatz</h3>
+                            <p>Vollkeramik und hochwertige Versorgungen für jeden Bedarf.</p>
+                            <span class="service-link">
+                                Mehr erfahren
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                            </span>
+                        </div>
+                    </a>
+                    
+                    <a href="./komplementaere-methoden.html" style="text-decoration: none;">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+                            </div>
+                            <h3>Komplementäre Methoden</h3>
+                            <p>Homöopathie, Kinesiologie, Akupunktur und BEMER-Therapie.</p>
+                            <span class="service-link">
+                                Mehr erfahren
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                            </span>
+                        </div>
+                    </a>
+                    
+                    <a href="./behandlungen.html" style="text-decoration: none;">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            </div>
+                            <h3>Parodontologie</h3>
+                            <p>Behandlung des Zahnhalteapparats, der Grundlage gesunder Zähne.</p>
+                            <span class="service-link">
+                                Mehr erfahren
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="reviews-section">
+            <div class="container">
+                <div class="reviews-header">
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <div class="reviews-stars">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        </div>
+                        <span class="reviews-rating">5,0</span>
+                    </div>
+                    <p class="reviews-subtitle">
+                        Basierend auf <strong style="color: white;">11 Google-Bewertungen</strong> und <strong style="color: white;">11 Jameda-Bewertungen</strong>
+                    </p>
+                    <h2 class="reviews-title">Was unsere Patienten sagen</h2>
+                    <div class="gold-divider"></div>
+                </div>
+                
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div>
+                                <p class="review-name">Helmut Bernhard Gruchmann</p>
+                                <p class="review-date">vor einem Jahr</p>
+                            </div>
+                            <span class="review-source">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path></svg>
+                                Google
+                            </span>
+                        </div>
+                        <div class="review-stars">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        </div>
+                        <p class="review-text">„Eine fantastische Zahnarztpraxis! Dr. Weiss und ihr Team sind unglaublich freundlich, hilfsbereit und absolut professionell. Meine Frau, obwohl sie dort vorher keine Patientin war, wurde sofort aufmerksam und kompetent versorgt, ohne Wartezeit. Sehr empfehlenswert!"</p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div>
+                                <p class="review-name">Veronika Fischer</p>
+                                <p class="review-date">vor 2 Jahren</p>
+                            </div>
+                            <span class="review-source">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path></svg>
+                                Google
+                            </span>
+                        </div>
+                        <div class="review-stars">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        </div>
+                        <p class="review-text">„Ein super freundliches, unglaublich einfühlsames und immer fröhliches Team. Sehr empfehlenswert für Angstpatienten. Ich schätze besonders, dass jeder Termin eingehalten wird und ich nie warten musste."</p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div>
+                                <p class="review-name">Anne-Kathrin Merz</p>
+                                <p class="review-date">vor 4 Jahren</p>
+                            </div>
+                            <span class="review-source">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path></svg>
+                                Google
+                            </span>
+                        </div>
+                        <div class="review-stars">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        </div>
+                        <p class="review-text">„Dr. Weiss ist eine einfühlsame Zahnärztin, die sich bei Untersuchungen, Behandlungen und Beratungen immer die nötige Zeit für ihre Patienten nimmt und jedes Problem ruhig und kompetent löst."</p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem;">
+                    <a href="https://www.google.com/maps/search/Zahnarztpraxis+Dr.+Judith+Weiss+Pettendorf" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                        Alle Google-Bewertungen ansehen
+                    </a>
+                    <span style="color: rgba(255,255,255,0.3);">|</span>
+                    <a href="https://www.jameda.de/judith-weiss/zahnarzt/pettendorf" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                        Alle Jameda-Bewertungen ansehen
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2 class="section-heading">
+                            Zahnarztpraxis Dr. Judith Weiss –<br>
+                            <span style="color: var(--gold);">Seit 1997 in Pettendorf</span>
+                        </h2>
+                        <p>
+                            Unsere Praxis verbindet <strong>moderne Zahnheilkunde-Behandlungen</strong> mit einem ganzheitlichen Blick auf den Menschen. Neben klassischen Behandlungen wie Implantologie, Prophylaxe und Zahnersatz bieten wir als eine der wenigen Zahnarztpraxen in der Region Regensburg auch <strong>komplementäre Methoden</strong> an: Homöopathie, Applied Kinesiology, Akupunktur und BEMER-Therapie.
+                        </p>
+                        <p>
+                            Wir nehmen uns Zeit für Sie, für die Behandlung, für die Beratung und für Ihre individuellen Bedürfnisse. Kurze Wartezeiten und ein persönliches, eingespieltes Team sind für uns selbstverständlich.
+                        </p>
+                        <div class="about-buttons">
+                            <a href="./team.html" class="btn-navy">
+                                Unser Team kennenlernen
+                            </a>
+                            <a href="./komplementaere-methoden.html" class="btn-gold">Komplementäre Methoden</a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="hours-card">
+                            <div class="hours-header">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <h3>Öffnungszeiten</h3>
+                            </div>
+                            <ul class="hours-list">
+                                <li>
+                                    <span class="day">Montag</span>
+                                    <span class="time">08:00 – 12:00 & 14:00 – 18:30</span>
+                                </li>
+                                <li>
+                                    <span class="day">Dienstag</span>
+                                    <span class="time">07:00 – 11:00</span>
+                                </li>
+                                <li>
+                                    <span class="day">Mittwoch</span>
+                                    <span class="time">08:00 – 12:00 & 16:00 – 20:00</span>
+                                </li>
+                                <li>
+                                    <span class="day">Donnerstag</span>
+                                    <span class="time">08:00 – 12:00 & 14:00 – 18:00</span>
+                                </li>
+                                <li>
+                                    <span class="day">Freitag</span>
+                                    <span class="time">08:00 – 12:00</span>
+                                </li>
+                            </ul>
+                            <div class="hours-cta">
+                                <a href="tel:+499409861430" class="btn-gold">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    Jetzt anrufen: 09409 861430
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section style="background: white;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 2.5rem;">
+                    <h2 class="section-heading centered">Anfahrt & Lage</h2>
+                    <p style="color: var(--navy); margin-top: 1rem;">
+                        Eine gute Viertelstunde von Regensburg entfernt, mit Parkplätzen direkt vor dem Eingang.
+                    </p>
+                </div>
+                
+                <div class="map-grid">
+                    <div class="map-container">
+                        <iframe 
+                            title="Zahnarztpraxis Dr. Weiss – Lage in Pettendorf"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2613.9521!2d12.0028!3d49.0613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479fbfb9d25c16a7%3A0xcf4019caeb30ecf0!2sHauptstra%C3%9Fe%2027A%2C%2093186%20Pettendorf!5e0!3m2!1sde!2sde!4v1680000000000!5m2!1sde!2sde"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <h3>Kontakt & Anschrift</h3>
+                        <ul class="contact-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                <span>Zahnarztpraxis Dr. Weiss<br>Hauptstraße 27a<br>93186 Pettendorf</span>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                <a href="tel:+499409861430">09409 861430</a>
+                            </li>
+                        </ul>
+                        <div class="contact-buttons">
+                            <a href="https://maps.google.com/?q=Hauptstra%C3%9Fe+27a,+93186+Pettendorf" target="_blank" rel="noopener noreferrer" class="btn-gold">Route planen</a>
+                            <a href="./kontakt.html" class="btn-navy">Zur Kontaktseite</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-divider"></div>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="./assets/logo.svg" alt="Zahnarztpraxis Dr. Weiss" class="footer-logo">
+                    <p class="footer-text">
+                        Ihre Zahnarztpraxis in Pettendorf bei Regensburg. Moderne Zahnheilkunde mit ganzheitlichem Ansatz seit 1997.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Kontakt & Anschrift</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span>Hauptstraße 27a<br>93186 Pettendorf</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <a href="tel:+499409861430">09409 861430</a>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                            <a href="/cdn-cgi/l/email-protection#83f1e6f9e6f3f7eaecedc3f9e2ebede2f1f9f7f3f1e2fbeaf0aee7f1aef4e6eaf0f0ade7e6"><span class="__cf_email__" data-cfemail="3644534c5346425f5958764c575e5857444c424644574e5f451b52441b41535f4545185253">[email&#160;protected]</span></a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Öffnungszeiten</h3>
+                    <ul class="footer-hours">
+                        <li><span>Montag</span><span>08:00–12:00 & 14:00–18:30</span></li>
+                        <li><span>Dienstag</span><span>07:00–11:00</span></li>
+                        <li><span>Mittwoch</span><span>08:00–12:00 & 16:00–20:00</span></li>
+                        <li><span>Donnerstag</span><span>08:00–12:00 & 14:00–18:00</span></li>
+                        <li><span>Freitag</span><span>08:00–12:00</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 Zahnarztpraxis Dr. med. dent. Judith Weiss, Pettendorf</p>
+                <div class="footer-links">
+                    <a href="./impressum.html">Impressum</a>
+                    <a href="./datenschutz.html">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Call Button - nur Mobile -->
+    <a href="tel:+499409861430" class="sticky-call-btn" aria-label="Jetzt anrufen">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+    </a>
+
+    <style>
+        /* Sticky Call Button - nur auf Mobile sichtbar */
+        .sticky-call-btn {
+            display: none;
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 56px;
+            height: 56px;
+            background: var(--gold);
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            z-index: 100;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .sticky-call-btn svg {
+            color: white;
+        }
+        
+        .sticky-call-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Nur auf Mobile anzeigen 
