@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Datenschutz – Zahnarztpraxis Dr. Judith Weiss, Pettendorf</title>
+    <meta name="description" content="Datenschutzerklärung der Zahnarztpraxis Dr. Judith Weiss in Pettendorf bei Regensburg.">
+    
+    <!-- Fonts -->
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./assets/styles.css">
+    
+    <style>
+        :root {
+            --navy: oklch(28% 0.08 255);
+            --navy-light: oklch(92% 0.02 255);
+            --gold: oklch(72% 0.1 75);
+            --gold-light: oklch(95% 0.04 75);
+        }
+        
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--navy);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 0.75rem 0;
+            transition: all 0.3s;
+        }
+        
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        
+        .logo {
+            height: 64px;
+            flex-shrink: 0;
+        }
+        
+        nav {
+            display: none;
+        }
+        
+        @media (min-width: 1024px) {
+            nav {
+                display: flex;
+                align-items: center;
+                gap: 0.25rem;
+            }
+        }
+        
+        nav a {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--navy);
+            text-decoration: none;
+            position: relative;
+            white-space: nowrap;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            color: var(--gold);
+        }
+        
+        .header-contact {
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .header-contact {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+            }
+        }
+        
+        .phone-link {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--navy);
+            text-decoration: none;
+        }
+        
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gold);
+            color: white;
+            padding: 0.625rem 1.25rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        
+        .btn-gold:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+        }
+        
+        .mobile-menu-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        @media (min-width: 1024px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 40;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .mobile-menu.active {
+            display: flex;
+        }
+        
+        .mobile-menu a {
+            padding: 0.75rem 1rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--navy);
+            text-decoration: none;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid var(--navy-light);
+        }
+        
+        .mobile-menu a:hover {
+            background-color: var(--gold-light);
+            color: var(--gold);
+        }
+        
+        .mobile-menu .btn-gold {
+            margin: 1rem auto 0;
+            width: auto;
+            justify-content: center;
+            color: white !important;
+            border-bottom: none;
+        }
+        
+        .mobile-menu .btn-gold:hover {
+            color: white !important;
+            background-color: var(--gold);
+            filter: brightness(1.1);
+        }
+        
+        /* Hamburger animation */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 24px;
+        }
+        
+        .hamburger span {
+            display: block;
+            height: 2px;
+            background: var(--navy);
+            transition: all 0.3s;
+        }
+        
+        .mobile-menu-btn.active .hamburger span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .mobile-menu-btn.active .hamburger span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-btn.active .hamburger span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        
+        /* Page Header */
+        .page-header {
+            position: relative;
+            padding: 10rem 0 5rem;
+            text-align: left;
+            overflow: hidden;
+            min-height: 300px;
+            background: var(--navy-light);
+        }
+        
+        .page-header-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .page-header-subtitle {
+            color: var(--gold);
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header {
+                min-height: 200px;
+                padding: 7rem 0 3rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Content Section */
+        .content-section {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .content-wrapper h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 2rem 0 1rem;
+        }
+        
+        .content-wrapper h2:first-child {
+            margin-top: 0;
+        }
+        
+        .content-wrapper h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin: 1.5rem 0 0.75rem;
+        }
+        
+        .content-wrapper p {
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+        
+        .content-wrapper ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        
+        .content-wrapper li {
+            line-height: 1.75;
+            margin-bottom: 0.5rem;
+        }
+        
+        .content-wrapper a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        
+        .content-wrapper a:hover {
+            text-decoration: underline;
+        }
+        
+        .placeholder-text {
+            background: var(--navy-light);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--gold);
+            color: var(--navy);
+            font-style: italic;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: white;
+            padding: 0 0 1.5rem;
+        }
+        
+        .footer-divider {
+            height: 4px;
+            background: var(--gold);
+            margin-bottom: 3rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1.5fr 1fr 1fr;
+            }
+        }
+        
+        .footer-logo {
+            height: 64px;
+            margin-bottom: 1rem;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+        
+        .footer-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+            line-height: 1.75;
+        }
+        
+        .footer-heading {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer-contact svg {
+            color: var(--gold);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .footer-contact a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-contact a:hover {
+            color: white;
+        }
+        
+        .footer-hours {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-hours li {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.25rem;
+        }
+        
+        .footer-bottom {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        @media (min-width: 640px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+        
+        .footer-bottom a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-bottom a:hover {
+            color: white;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        main {
+            padding-top: 72px;
+        }
+        
+        @media (min-width: 1024px) {
+            main {
+                padding-top: 88px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="./">
+                <img src="./assets/logo.svg" alt="Zahnarztpraxis Dr. Judith Weiss – Pettendorf" class="logo">
+            </a>
+            
+            <nav>
+                <a href="./team.html">Team</a>
+                <a href="./behandlungen.html">Behandlungen</a>
+                <a href="./komplementaere-methoden.html">Komplementäre Methoden</a>
+                <a href="./service.html">Service</a>
+                <a href="./kontakt.html">Kontakt</a>
+            </nav>
+            
+            <div class="header-contact">
+                <a href="tel:+499409861430" class="phone-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    09409 861430
+                </a>
+                <a href="tel:+499409861430" class="btn-gold">Termin vereinbaren</a>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Menü öffnen" onclick="toggleMobileMenu()">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="./" onclick="closeMobileMenu()">Startseite</a>
+        <a href="./team.html" onclick="closeMobileMenu()">Team</a>
+        <a href="./behandlungen.html" onclick="closeMobileMenu()">Behandlungen</a>
+        <a href="./komplementaere-methoden.html" onclick="closeMobileMenu()">Komplementäre Methoden</a>
+        <a href="./service.html" onclick="closeMobileMenu()">Service</a>
+        <a href="./kontakt.html" onclick="closeMobileMenu()">Kontakt</a>
+        <a href="tel:+499409861430" class="btn-gold" onclick="closeMobileMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            09409 861430
+        </a>
+    </div>
+    
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            menu.classList.toggle('active');
+            btn.classList.toggle('active');
+        }
+        
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            menu.classList.remove('active');
+            btn.classList.remove('active');
+        }
+    </script>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container page-header-content">
+                <p class="page-header-subtitle">Zahnarztpraxis Dr. Weiss – Pettendorf</p>
+                <h1>Datenschutz</h1>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-wrapper">
+                    <h2>1. Verantwortliche Stelle</h2>
+                    <p>
+                        Verantwortlich für die Datenverarbeitung auf dieser Website ist:
+                    </p>
+                    <p>
+                        <strong>Zahnarztpraxis Dr. Weiss</strong><br>
+                        Inhaberin: Judith Weiss<br>
+                        Hauptstraße 27a<br>
+                        93186 Pettendorf
+                    </p>
+                    <p>
+                        Telefon: +49 (0)9409 861430<br>
+                        E-Mail: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b8caddc2ddc8ccd1d7d6f8c2d9d0d6d9cac2ccc8cad9c0d1cb95dcca95cfddd1cbcb96dcdd">[email&#160;protected]</a>
+                    </p>
+                    
+                    <h2>2. Hosting</h2>
+                    <p>
+                        Diese Website wird bei DomainFactory gehostet. Anbieter ist die DomainFactory GmbH, Oskar-Messter-Str. 33, 85737 Ismaning, Deutschland.
+                    </p>
+                    <p>
+                        Wenn Sie unsere Website besuchen, werden auf den Servern von DomainFactory automatisch technische Daten erfasst (siehe Abschnitt „Server-Log-Dateien"). Diese Datenverarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO – wir haben ein berechtigtes Interesse an einer sicheren und effizienten Bereitstellung unserer Website.
+                    </p>
+                    <p>
+                        Mit DomainFactory besteht ein Vertrag zur Auftragsverarbeitung gemäß Art. 28 DSGVO.
+                    </p>
+                    
+                    <h2>3. SSL-Verschlüsselung</h2>
+                    <p>
+                        Diese Website nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile. Wenn die Verschlüsselung aktiv ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.
+                    </p>
+                    
+                    <h2>4. Server-Log-Dateien</h2>
+                    <p>
+                        Bei jedem Zugriff auf unsere Website werden automatisch folgende Daten erfasst und in Server-Log-Dateien gespeichert:
+                    </p>
+                    <ul>
+                        <li>Browsertyp und Browserversion</li>
+                        <li>Verwendetes Betriebssystem</li>
+                        <li>Referrer URL (zuvor besuchte Seite)</li>
+                        <li>IP-Adresse</li>
+                        <li>Uhrzeit der Serveranfrage</li>
+                    </ul>
+                    <p>
+                        Diese Daten werden nicht mit anderen Datenquellen zusammengeführt. Die Erfassung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO – wir haben ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und Optimierung unserer Website.
+                    </p>
+                    
+                    <h2>5. Kontaktformular</h2>
+                    <p>
+                        Wenn Sie uns per Kontaktformular eine Anfrage senden, werden Ihre Angaben aus dem Formular einschließlich der von Ihnen angegebenen Kontaktdaten verarbeitet. Diese Daten verwenden wir ausschließlich zur Bearbeitung Ihrer Anfrage.
+                    </p>
+                    <p>
+                        Für die technische Übermittlung des Kontaktformulars nutzen wir den Dienst Formspree. Anbieter ist Formspree, Inc., 1005 Congress Ave, Suite 925, Austin, TX 78701, USA.
+                    </p>
+                    <p>
+                        Wenn Sie das Kontaktformular absenden, werden Ihre Daten an Server von Formspree in den USA übertragen. Formspree speichert diese Daten nicht dauerhaft, sondern leitet sie direkt an unsere E-Mail-Adresse weiter.
+                    </p>
+                    <p>
+                        Die Datenübertragung in die USA erfolgt auf Grundlage von Standardvertragsklauseln (SCCs) der EU-Kommission. Weitere Informationen finden Sie in der Datenschutzerklärung von Formspree: <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">https://formspree.io/legal/privacy-policy/</a>
+                    </p>
+                    <p>
+                        Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. a DSGVO (Ihre Einwilligung durch Absenden des Formulars).
+                    </p>
+                    <p>
+                        Die bei uns eingehenden Anfragen werden gelöscht, sobald sie abschließend bearbeitet wurden – es sei denn, gesetzliche Aufbewahrungspflichten stehen dem entgegen.
+                    </p>
+                    
+                    <h2>6. Kontakt per E-Mail oder Telefon</h2>
+                    <p>
+                        Wenn Sie uns per E-Mail oder Telefon kontaktieren, wird Ihre Anfrage einschließlich aller personenbezogenen Daten (Name, Anfrage) bei uns gespeichert und verarbeitet. Die Rechtsgrundlage und Speicherdauer entsprechen den Regelungen zum Kontaktformular (siehe oben).
+                    </p>
+                    
+                    <h2>7. Cookies</h2>
+                    <p>
+                        Diese Website verwendet ausschließlich technisch notwendige Cookies, die für den Betrieb der Website erforderlich sind. Eine Einwilligung ist hierfür nicht erforderlich (Art. 6 Abs. 1 lit. f DSGVO).
+                    </p>
+                    <p>
+                        Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden oder Cookies generell ablehnen. Bei Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein.
+                    </p>
+                    
+                    <h2>8. Ihre Rechte</h2>
+                    <p>
+                        Sie haben jederzeit folgende Rechte bezüglich Ihrer personenbezogenen Daten:
+                    </p>
+                    <ul>
+                        <li><strong>Auskunft:</strong> Sie können Auskunft über Ihre bei uns gespeicherten Daten verlangen.</li>
+                        <li><strong>Berichtigung:</strong> Sie können die Berichtigung unrichtiger Daten verlangen.</li>
+                        <li><strong>Löschung:</strong> Sie können die Löschung Ihrer Daten verlangen, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.</li>
+                        <li><strong>Einschränkung:</strong> Sie können die Einschränkung der Verarbeitung verlangen.</li>
+                        <li><strong>Datenübertragbarkeit:</strong> Sie können Ihre Daten in einem gängigen Format erhalten.</li>
+                        <li><strong>Widerspruch:</strong> Sie können der Verarbeitung Ihrer Daten widersprechen.</li>
+                    </ul>
+                    <p>
+                        Zur Ausübung Ihrer Rechte wenden Sie sich bitte an die oben genannte verantwortliche Stelle.
+                    </p>
+                    
+                    <h2>9. Beschwerderecht</h2>
+                    <p>
+                        Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten zu beschweren. Die für uns zuständige Aufsichtsbehörde ist:
+                    </p>
+                    <p>
+                        Bayerisches Landesamt für Datenschutzaufsicht (BayLDA)<br>
+                        Promenade 18<br>
+                        91522 Ansbach<br>
+                        <a href="https://www.lda.bayern.de" target="_blank" rel="noopener">https://www.lda.bayern.de</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-divider"></div>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="./assets/logo.svg" alt="Zahnarztpraxis Dr. Weiss" class="footer-logo">
+                    <p class="footer-text">
+                        Ihre Zahnarztpraxis in Pettendorf bei Regensburg. Moderne Zahnheilkunde mit ganzheitlichem Ansatz seit 1997.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Kontakt & Anschrift</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span>Hauptstraße 27a<br>93186 Pettendorf</span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <a href="tel:+499409861430">09409 861430</a>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                            <a href="/cdn-cgi/l/email-protection#6c1e0916091c180503022c160d04020d1e16181c1e0d14051f41081e411b09051f1f420809"><span class="__cf_email__" data-cfemail="c6b4a3bca3b6b2afa9a886bca7aea8a7b4bcb2b6b4a7beafb5eba2b4ebb1a3afb5b5e8a2a3">[email&#160;protected]</span></a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Öffnungszeiten</h3>
+                    <ul class="footer-hours">
+                        <li><span>Montag</span><span>08:00–12:00 & 14:00–18:30</span></li>
+                        <li><span>Dienstag</span><span>07:00–11:00</span></li>
+                        <li><span>Mittwoch</span><span>08:00–12:00 & 16:00–20:00</span></li>
+                        <li><span>Donnerstag</span><span>08:00–12:00 & 14:00–18:00</span></li>
+                        <li><span>Freitag</span><span>08:00–12:00</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 Zahnarz
